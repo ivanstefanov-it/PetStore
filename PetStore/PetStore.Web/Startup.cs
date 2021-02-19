@@ -14,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PetStore.Data;
 using PetStore.Data.Models;
+using PetStore.Services;
+using PetStore.Services.Implementations;
 
 namespace PetStore.Web
 {
@@ -44,6 +46,7 @@ namespace PetStore.Web
             })
                 .AddEntityFrameworkStores<PetStoreDbContext>();
             services.AddControllersWithViews();
+            services.AddTransient<IBrandService, BrandService>();
             services.AddRazorPages();
         }
 
