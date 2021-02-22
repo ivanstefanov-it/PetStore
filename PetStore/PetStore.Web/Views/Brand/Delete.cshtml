@@ -1,0 +1,11 @@
+﻿@model PetStore.Services.Models.Brand.BrandDetailsServiceModel
+
+<h1>Are you sure you want to delete the following Brand?</h1>
+
+<div>
+    <p>@Model.Name</p>
+</div>
+
+<div>
+    <a href="/Brand/ComfirmDelete/@Model.Id" class="btn btn-danger">Yes</a> &nbsp; <a href="/Brand/All" class="btn btn-info">No</a>
+</div>

@@ -2,12 +2,15 @@
 
 <table class="table table-bordered table-striped">
 
-    @foreach (var item in Model.Name)
+    @foreach (var item in Model.Brands)
     {
-        <tr>
-            <td>
-                @item
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @item.Name
+        </td>
+        <td class="text-center">
+            <a href="/Brand/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+    </tr>
     }
 </table>

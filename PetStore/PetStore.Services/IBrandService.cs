@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetStore.Services.Models.Brand;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,6 +9,11 @@ namespace PetStore.Services
     {
         int Create(string name);
 
-        IEnumerable<string> All();
+        IEnumerable<BrandListingServiceModel> All();
+
+        bool Delete(int id);
+
+        BrandDetailsServiceModel Details(int id);
+
     }
 }

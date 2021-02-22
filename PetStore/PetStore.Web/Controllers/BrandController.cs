@@ -37,8 +37,32 @@ namespace PetStore.Web.Controllers
         public IActionResult All()
         {
             var allbrands = this.brandService.All();
-            var model = new AllBrandsViewModel { Name = allbrands };
+            var model = new AllBrandsViewModel { Brands = allbrands };
             return this.View(model);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var brand = this.brandService.Details(id);
+
+            if (brand == null)
+            {
+                return NotFound();
+            }
+
+            return this.View(brand);
+        }
+
+        public IActionResult ComfirmDelete(int id)
+        {
+            var deleted = this.brandService.Delete(id);
+
+            if (!deleted)
+            {
+                return BadRequest();
+            }
+
+            return RedirectToAction(nameof(All));
         }
     }
 }
