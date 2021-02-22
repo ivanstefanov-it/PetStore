@@ -29,7 +29,16 @@ namespace PetStore.Web.Controllers
             {
                 return this.View(input);
             }
+
+            this.brandService.Create(input.Name);
             return this.Redirect("/Brand/All");
+        }
+
+        public IActionResult All()
+        {
+            var allbrands = this.brandService.All();
+            var model = new AllBrandsViewModel { Name = allbrands };
+            return this.View(model);
         }
     }
 }

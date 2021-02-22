@@ -41,5 +41,11 @@ namespace PetStore.Services.Implementations
 
             return brand.Id;
         }
+
+        public IEnumerable<string> All()
+        {
+            var allBrands = this.db.Brands.Select(x => x.Name).ToList();
+            return allBrands;
+        }
     }
 }

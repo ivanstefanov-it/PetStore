@@ -1,6 +1,12 @@
 ﻿@model PetStore.Web.ViewModels.Brand.CreateInputModel
 <h3>Add</h3>
 
-<form asp-controller="Brand" asp-action="Create" method="post">
-    <input type="submit" name="name" value="Add" />
-</form>
+<div class="mx-auto w-50">
+    <form asp-controller="Brand" asp-action="Create" method="post">
+        <input asp-for="Name" type="text" class="form-control" placeholder="Add..." name="Name">
+        <hr />
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button type="submit" class="btn btn-dark">Add</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,13 @@
+﻿@model PetStore.Web.ViewModels.Brand.AllBrandsViewModel
+
+<table class="table table-bordered table-striped">
+
+    @foreach (var item in Model.Name)
+    {
+        <tr>
+            <td>
+                @item
+            </td>
+        </tr>
+    }
+</table>

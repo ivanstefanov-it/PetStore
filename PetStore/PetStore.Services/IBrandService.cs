@@ -7,5 +7,7 @@ namespace PetStore.Services
     public interface IBrandService
     {
         int Create(string name);
+
+        IEnumerable<string> All();
     }
 }
