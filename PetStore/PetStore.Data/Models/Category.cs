@@ -5,7 +5,7 @@
 
     using static DataValidation;
 
-    // Each category is for each animal.
+    // Each category is for each animal. Like dog, cat ect...
     public class Category
     {
         public int Id { get; set; }

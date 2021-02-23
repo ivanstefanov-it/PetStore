@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PetStore.Web.ViewModels.Brand
+namespace PetStore.Web.ViewModels.Breed
 {
     public class CreateInputModel
     {

@@ -47,6 +47,7 @@ namespace PetStore.Web
                 .AddEntityFrameworkStores<PetStoreDbContext>();
             services.AddControllersWithViews();
             services.AddTransient<IBrandService, BrandService>();
+            services.AddTransient<IBreedService, BreedService>();
             services.AddRazorPages();
         }
 

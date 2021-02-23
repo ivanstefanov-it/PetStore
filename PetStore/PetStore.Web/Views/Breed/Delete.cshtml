@@ -1,0 +1,11 @@
+﻿@model PetStore.Services.Models.Breed.BreedDetailsListingModel
+
+<h1>Are you sure you want to delete the following Breed?</h1>
+
+<div>
+    <p>@Model.Name</p>
+</div>
+
+<div>
+    <a href="/Breed/ComfirmDelete/@Model.Id" class="btn btn-danger">Yes</a> &nbsp; <a href="/Breed/All" class="btn btn-info">No</a>
+</div>

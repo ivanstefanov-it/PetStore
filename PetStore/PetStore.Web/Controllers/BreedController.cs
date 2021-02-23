@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PetStore.Services;
-using PetStore.Web.ViewModels.Brand;
+using PetStore.Web.ViewModels.Breed;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace PetStore.Web.Controllers
 {
-    public class BrandController : Controller
+    public class BreedController : Controller
     {
-        private readonly IBrandService brandService;
+        private readonly IBreedService breedService;
 
-        public BrandController(IBrandService brandService)
+        public BreedController(IBreedService breedService)
         {
-            this.brandService = brandService;
+            this.breedService = breedService;
         }
 
-        public IActionResult Create() 
+        public IActionResult Create()
         {
             return this.View();
         }
@@ -25,37 +25,38 @@ namespace PetStore.Web.Controllers
         [HttpPost]
         public IActionResult Create(CreateInputModel input)
         {
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
                 return this.View(input);
             }
 
-            this.brandService.Create(input.Name);
+            this.breedService.Create(input.Name);
+
             return this.Redirect(nameof(All));
         }
 
         public IActionResult All()
         {
-            var allbrands = this.brandService.All();
-            var model = new AllBrandsViewModel { Brands = allbrands };
+            var allBreeds = this.breedService.All();
+            var model = new AllBreedViewModel { Breeds = allBreeds };
             return this.View(model);
         }
 
         public IActionResult Delete(int id)
         {
-            var brand = this.brandService.Details(id);
+            var breed = this.breedService.Details(id);
 
-            if (brand == null)
+            if (breed == null)
             {
                 return NotFound();
             }
 
-            return this.View(brand);
+            return this.View(breed);
         }
 
         public IActionResult ComfirmDelete(int id)
         {
-            var deleted = this.brandService.Delete(id);
+            var deleted =  this.breedService.Delete(id);
 
             if (!deleted)
             {

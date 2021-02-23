@@ -71,7 +71,9 @@ namespace PetStore.Services.Implementations
 
         public BrandDetailsServiceModel Details(int id)
         {
-            var brandDetails = this.db.Brands.Where(x => x.Id == id).Select(x => new BrandDetailsServiceModel
+            var brandDetails = this.db.Brands
+                .Where(x => x.Id == id)
+                .Select(x => new BrandDetailsServiceModel
             {
                 Name = x.Name,
                 Id = x.Id
