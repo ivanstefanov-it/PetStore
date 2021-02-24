@@ -48,6 +48,7 @@ namespace PetStore.Web
             services.AddControllersWithViews();
             services.AddTransient<IBrandService, BrandService>();
             services.AddTransient<IBreedService, BreedService>();
+            services.AddTransient<ICategoryService, CategoryService>();
             services.AddRazorPages();
         }
 

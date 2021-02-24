@@ -1,0 +1,21 @@
+﻿@model PetStore.Web.ViewModels.Category.CreateInputModel
+<h3>Add new category</h3>
+
+<div class="mx-auto w-50">
+    <form asp-controller="Category" asp-action="Create" method="post">
+        <div>
+            <input asp-for="Name" type="text" class="form-control" placeholder="Name..." name="Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <br />
+        <div>
+            <input asp-for="Description" type="text" class="form-control" placeholder="Description..." name="Description">
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <hr />
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button type="submit" class="btn btn-dark">Add</button>
+        </div>
+    </form>
+</div>
