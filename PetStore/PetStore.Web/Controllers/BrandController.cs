@@ -43,14 +43,14 @@ namespace PetStore.Web.Controllers
 
         public IActionResult Delete(int id)
         {
-            var brand = this.brandService.Details(id);
+            var brandDetails = this.brandService.Details(id);
 
-            if (brand == null)
+            if (brandDetails == null)
             {
                 return NotFound();
             }
 
-            return this.View(brand);
+            return this.View(brandDetails);
         }
 
         public IActionResult ComfirmDelete(int id)

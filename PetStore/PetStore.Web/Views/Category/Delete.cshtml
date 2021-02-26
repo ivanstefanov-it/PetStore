@@ -1,0 +1,11 @@
+﻿@model PetStore.Services.Models.Category.CategoryDetailsServiceModel
+
+<h1>Are you sure you want to delete the following Category?</h1>
+
+<div>
+    <p>@Model.Name</p>
+</div>
+
+<div>
+    <a href="/Category/ComfirmDelete/@Model.Id" class="btn btn-danger">Yes</a> &nbsp; <a href="/Category/All" class="btn btn-info">No</a>
+</div>

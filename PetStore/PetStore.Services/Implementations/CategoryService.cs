@@ -17,32 +17,72 @@ namespace PetStore.Services.Implementations
             this.db = db;
         }
 
-        public int Create(CategoryCreateServiceModel model)
+        public IEnumerable<CategoryListingServiceModel> All()
         {
-            if (model.Name == null)
+            var allCategories = this.db.Categories.Select(x => new CategoryListingServiceModel
             {
-                throw new InvalidOperationException("Breed name cannot be empty!");
+                Id = x.Id,
+                Name = x.Name,
+                Description = x.Description
+            }).ToList();
+
+            return allCategories;
+        }
+
+        public int Create(string name, string description)
+        {
+            if (name == null)
+            {
+                throw new InvalidOperationException("Category name cannot be empty!");
             }
 
-            if (this.db.Categories.Any(x => x.Name == model.Name))
+            if (this.db.Categories.Any(x => x.Name == name))
             {
-                throw new InvalidOperationException($"Breed name {model.Name} already exists!");
+                throw new InvalidOperationException($"Category name {name} already exists!");
             }
 
-            if (model.Name.Length > DataValidation.NameMaxLength)
+            if (name.Length > DataValidation.NameMaxLength)
             {
-                throw new InvalidOperationException($"Breed name cannot be more than {DataValidation.NameMaxLength} symbols!");
+                throw new InvalidOperationException($"Category name cannot be more than {DataValidation.NameMaxLength} symbols!");
             }
 
             var category = new Category
             {
-                Name = model.Name,
-                Description = model.Description,
+                Name = name,
+                Description = description,
             };
 
             this.db.Categories.Add(category);
             this.db.SaveChanges();
             return category.Id;
+        }
+
+        public bool Delete(int id)
+        {
+            var category = this.db.Categories.Find(id);
+
+            if (category == null)
+            {
+                return false;
+            }
+
+            this.db.Categories.Remove(category);
+            this.db.SaveChanges();
+
+            return true;
+        }
+
+        public CategoryDetailsServiceModel Details(int id)
+        {
+            var category = this.db.Categories
+                .Where(x => x.Id == id)
+                .Select(x => new CategoryDetailsServiceModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                }).FirstOrDefault();
+
+            return category;
         }
     }
 }

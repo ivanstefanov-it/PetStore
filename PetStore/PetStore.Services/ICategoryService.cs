@@ -7,6 +7,12 @@ namespace PetStore.Services
 {
     public interface ICategoryService
     {
-        int Create(CategoryCreateServiceModel model);
+        int Create(string name, string description);
+
+        IEnumerable<CategoryListingServiceModel> All();
+
+        CategoryDetailsServiceModel Details(int id);
+
+        bool Delete(int id);
     }
 }

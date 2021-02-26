@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PetStore.Services.Models.Category
 {
-    public class CategoryCreateServiceModel
+    public class CategoryListingServiceModel
     {
         public int Id { get; set; }
 
