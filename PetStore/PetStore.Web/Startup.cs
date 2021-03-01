@@ -49,6 +49,7 @@ namespace PetStore.Web
             services.AddTransient<IBrandService, BrandService>();
             services.AddTransient<IBreedService, BreedService>();
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IFoodService, FoodService>();
             services.AddRazorPages();
         }
 

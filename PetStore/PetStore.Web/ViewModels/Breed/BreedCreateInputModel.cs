@@ -4,16 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PetStore.Web.ViewModels.Category
+namespace PetStore.Web.ViewModels.Breed
 {
-    public class CreateInputModel
+    public class BreedCreateInputModel
     {
         [Required()]
         [MinLength(3, ErrorMessage = "Name should be more than {1} symbols!")]
         public string Name { get; set; }
-
-        [Required()]
-        [MinLength(10, ErrorMessage = "Description should be more than {1} symbols!")]
-        public string Description { get; set; }
     }
 }

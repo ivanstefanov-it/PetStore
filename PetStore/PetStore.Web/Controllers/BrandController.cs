@@ -23,7 +23,7 @@ namespace PetStore.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(CreateInputModel input)
+        public IActionResult Create(BrandCreateInputModel input)
         {
             if (!ModelState.IsValid)
             {

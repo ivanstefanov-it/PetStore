@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PetStore.Web.ViewModels.Breed
+namespace PetStore.Web.ViewModels.Brand
 {
-    public class CreateInputModel
+    public class BrandCreateInputModel
     {
         [Required()]
         [MinLength(3, ErrorMessage = "Name should be more than {1} symbols!")]
