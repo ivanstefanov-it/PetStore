@@ -1,0 +1,17 @@
+﻿@model PetStore.Services.Models.Food.FoodDetailsServiceModel
+
+<h1>Are you sure you want to delete the following food?</h1>
+
+<div>
+    <p>@Model.Name</p>
+</div>
+<div>
+    <p>@Model.Price</p>
+</div>
+<div>
+    <p>@Model.Weight</p>
+</div>
+
+<div>
+    <a href="/Food/ComfirmDelete/@Model.Id" class="btn btn-danger">Yes</a> &nbsp; <a href="/Food/All" class="btn btn-info">No</a>
+</div>

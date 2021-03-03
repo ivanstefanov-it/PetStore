@@ -1,0 +1,27 @@
+﻿@model PetStore.Web.ViewModels.Food.AllFoodsViewModel
+
+<h3>List of all foods</h3>
+
+<table class="table table-bordered table-striped">
+
+    @foreach (var item in Model.Foods)
+    {
+    <tr>
+        <td>
+            @item.Name
+        </td>
+        <td>
+            @item.Weight
+        </td>
+        <td>
+            @item.ExpirationDate
+        </td>
+        <td>
+            @item.Price
+        </td>
+        <td class="text-center">
+            <a href="/Food/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+    </tr>
+    }
+</table>

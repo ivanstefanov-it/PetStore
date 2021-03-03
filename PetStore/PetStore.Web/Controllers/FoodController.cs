@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using PetStore.Services;
 using PetStore.Web.ViewModels.Food;
 using System;
 using System.Collections.Generic;
@@ -9,9 +11,11 @@ namespace PetStore.Web.Controllers
 {
     public class FoodController : Controller
     {
-        public FoodController()
-        {
+        private readonly IFoodService foodService;
 
+        public FoodController(IFoodService foodService)
+        {
+            this.foodService = foodService;
         }
 
         public IActionResult Create()
@@ -26,14 +30,40 @@ namespace PetStore.Web.Controllers
             {
                 return this.View(inputModel);
             }
-
-            //this.foodService
+            
+            this.foodService.Create(inputModel.Name, inputModel.Weight, inputModel.DistributorPrice, inputModel.Price, inputModel.ExpirationDate, inputModel.BrandId, inputModel.CategoryId);
             return RedirectToAction(nameof(All));
         }
 
         public IActionResult All()
         {
-            return this.View();
+            var allFoods = this.foodService.All();
+            var model = new AllFoodsViewModel { Foods = allFoods };
+            return this.View(model);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var foodDetails = this.foodService.Details(id);
+
+            if (foodDetails == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(foodDetails);
+        }
+
+        public IActionResult ComfirmDelete(int id)
+        {
+            var deleted = this.foodService.Delete(id);
+
+            if (!deleted)
+            {
+                return BadRequest();
+            }
+
+            return RedirectToAction(nameof(All));
         }
     }
 }

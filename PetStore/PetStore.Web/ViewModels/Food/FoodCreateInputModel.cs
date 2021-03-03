@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,7 +13,6 @@ namespace PetStore.Web.ViewModels.Food
         [MinLength(3, ErrorMessage = "Name should be more than {1} symbols!")]
         public string Name { get; set; }
 
-        // In KG.
         [Range(0, 200)]
         public double Weight { get; set; }
 
@@ -27,5 +27,9 @@ namespace PetStore.Web.ViewModels.Food
         public int BrandId { get; set; }
 
         public int CategoryId { get; set; }
+
+        //public List<SelectListItem> BrandId { get; set; }
+
+        //public List<SelectListItem> CategoryId { get; set; }
     }
 }
