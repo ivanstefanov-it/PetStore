@@ -1,0 +1,16 @@
+﻿@model PetStore.Services.Models.Pet.PetDetailsServiceModel
+
+<h1>Are you sure you want to delete the following pet?</h1>
+
+<div>
+    <p>@Model.Category</p>
+    <p>@Model.Breed</p>
+    <p>@Model.DateOfBirth.ToShortDateString()</p>
+    <p>@Model.Description</p>
+    <p>@Model.Gender</p>
+    <p>$@Model.Price</p>
+</div>
+
+<div>
+    <a href="/Pet/ComfirmDelete/@Model.Id" class="btn btn-danger">Yes</a> &nbsp; <a href="/Pet/All" class="btn btn-info">No</a>
+</div>

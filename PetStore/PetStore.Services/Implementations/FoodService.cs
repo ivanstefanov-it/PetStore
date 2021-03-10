@@ -38,7 +38,7 @@ namespace PetStore.Services.Implementations
                 throw new InvalidOperationException("Food name cannot be empty!");
             }
 
-            if (this.db.Categories.Any(x => x.Name == name))
+            if (this.db.Food.Any(x => x.Name == name))
             {
                 throw new InvalidOperationException($"Food name {name} already exists!");
             }

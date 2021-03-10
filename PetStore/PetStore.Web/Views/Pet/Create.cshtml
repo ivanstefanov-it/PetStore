@@ -1,0 +1,41 @@
+﻿@model PetStore.Web.ViewModels.Pet.AddPetInputMode
+
+<h3>Add new pet</h3>
+<div class="mx-auto w-50">
+    <form asp-controller="Pet" asp-action="Create" method="post">
+        <div>
+            <input asp-for="Gender" type="text" class="form-control" placeholder="Gender..." name="Gender">
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+        <br />
+        <div>
+            <input asp-for="DateOfBirth" type="date" class="form-control" placeholder="Date Of Birth..." name="DateOfBirth">
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+        </div>
+        <br />
+        <div>
+            <input asp-for="Price" type="number" class="form-control" placeholder="Price..." name="Price">
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <br />
+        <div>
+            <input asp-for="Description" type="text" class="form-control" placeholder="Description..." name="Description">
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <br />
+        <div>
+            <input asp-for="BreedId" type="number" class="form-control" placeholder="Breed..." name="BreedId">
+            <span asp-validation-for="BreedId" class="text-danger"></span>
+        </div>
+        <br />
+        <div>
+            <input asp-for="CategoryId" type="number" class="form-control" placeholder="Category..." name="CategoryId">
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+        <hr />
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button type="submit" class="btn btn-dark">Add</button>
+        </div>
+    </form>
+</div>

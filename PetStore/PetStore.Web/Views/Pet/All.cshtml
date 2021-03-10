@@ -1,0 +1,24 @@
+﻿@model PetStore.Web.ViewModels.Pet.AllPetsViewModel
+
+<h3>List of all pets</h3>
+
+<table class="table table-bordered table-striped">
+
+    @foreach (var item in Model.Pets)
+    {
+        <tr>
+            <td>
+                @item.Category
+            </td>
+            <td>
+                @item.Breed
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td class="text-center">
+                <a href="/Pet/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -9,7 +9,7 @@ namespace PetStore.Web.ViewModels.Breed
     public class BreedCreateInputModel
     {
         [Required()]
-        [MinLength(3, ErrorMessage = "Name should be more than {1} symbols!")]
+        [MinLength(3, ErrorMessage = "{0} should be more than {1} symbols!")]
         public string Name { get; set; }
     }
 }

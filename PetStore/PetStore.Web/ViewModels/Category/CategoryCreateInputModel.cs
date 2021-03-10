@@ -9,11 +9,11 @@ namespace PetStore.Web.ViewModels.Category
     public class CategoryCreateInputModel
     {
         [Required()]
-        [MinLength(3, ErrorMessage = "Name should be more than {1} symbols!")]
+        [MinLength(3, ErrorMessage = "{0} should be more than {1} symbols!")]
         public string Name { get; set; }
 
         [Required()]
-        [MinLength(10, ErrorMessage = "Description should be more than {1} symbols!")]
+        [MinLength(10, ErrorMessage = "{0} should be more than {1} symbols!")]
         public string Description { get; set; }
     }
 }
