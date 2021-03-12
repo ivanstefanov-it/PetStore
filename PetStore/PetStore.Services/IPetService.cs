@@ -10,7 +10,7 @@ namespace PetStore.Services
     {
         int Create(Gender gender, DateTime dateOfBirth, decimal price, string description, int breedId, int categoryId);
 
-        IEnumerable<PetLIstingServiceModel> All();
+        IEnumerable<PetListingServiceModel> All();
 
         PetDetailsServiceModel Details(int id);
 

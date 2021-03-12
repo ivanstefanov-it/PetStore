@@ -8,6 +8,6 @@ namespace PetStore.Web.ViewModels.Pet
 {
     public class AllPetsViewModel
     {
-        public IEnumerable<PetLIstingServiceModel> Pets { get; set; }
+        public IEnumerable<PetListingServiceModel> Pets { get; set; }
     }
 }

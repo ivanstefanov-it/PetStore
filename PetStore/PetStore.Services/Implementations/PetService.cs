@@ -17,11 +17,11 @@ namespace PetStore.Services.Implementations
             this.db = db;
         }
 
-        public IEnumerable<PetLIstingServiceModel> All()
+        public IEnumerable<PetListingServiceModel> All()
         {
             var allPets = this.db
                 .Pets
-                .Select(p => new PetLIstingServiceModel
+                .Select(p => new PetListingServiceModel
                 {
                     Id = p.Id,
                     Breed = p.Breed.Name,
