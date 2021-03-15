@@ -98,5 +98,18 @@ namespace PetStore.Services.Implementations
 
             return petDetails;
         }
+
+        public PetOrderServiceModel Order(int id)
+        {
+            var model = this.db.Pets.Where(x => x.Id == id).Select(x => new PetOrderServiceModel
+            {
+                Id = x.Id,
+                Gender = x.Gender,
+                Price = x.Price,
+                Description = x.Description,
+            }).FirstOrDefault();
+
+            return model;
+        }
     }
 }

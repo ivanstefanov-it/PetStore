@@ -1,0 +1,17 @@
+﻿@model PetStore.Services.Models.Pet.PetOrderServiceModel
+
+<h1>Are you sure you want to buy the following pet?</h1>
+
+<div>
+    <p>@Model.Gender</p>
+</div>
+<div>
+    <p>@Model.Price</p>
+</div>
+<div>
+    <p>@Model.Description</p>
+</div>
+
+<div>
+    <a href="/Order/Create/@Model.Id" class="btn btn-danger">Yes</a> &nbsp; <a href="/" class="btn btn-info">No</a>
+</div>

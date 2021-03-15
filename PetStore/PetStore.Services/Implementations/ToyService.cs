@@ -100,5 +100,17 @@ namespace PetStore.Services.Implementations
 
             return model;
         }
+
+        public ToyOrderListingServiceModel Order(int id)
+        {
+            var model = this.db.Toys.Where(x => x.Id == id).Select(x => new ToyOrderListingServiceModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Price = x.Price,
+            }).FirstOrDefault();
+
+            return model;
+        }
     }
 }

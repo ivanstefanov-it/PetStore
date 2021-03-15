@@ -14,5 +14,7 @@ namespace PetStore.Services
         ToyDetailsServiceModel Details(int id);
 
         bool Delete(int id);
+
+        ToyOrderListingServiceModel Order(int id);
     }
 }

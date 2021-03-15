@@ -52,6 +52,7 @@ namespace PetStore.Web
             services.AddTransient<IFoodService, FoodService>();
             services.AddTransient<IPetService, PetService>();
             services.AddTransient<IToyService, ToyService>();
+            services.AddTransient<IOrderService, OrderService>();
             services.AddRazorPages();
         }
 
