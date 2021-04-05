@@ -7,6 +7,7 @@ namespace PetStore.Services.Models.Food
     public class FoodListingServiceModel
     {
         public int Id { get; set; }
+
         public string Name { get; set; }
 
         public double Weight { get; set; }

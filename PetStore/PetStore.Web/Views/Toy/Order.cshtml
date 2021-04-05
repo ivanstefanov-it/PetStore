@@ -1,14 +1,14 @@
-﻿@model PetStore.Services.Models.Toy.ToyDetailsServiceModel
+﻿@model PetStore.Services.Models.Toy.ToyOrderListingServiceModel
 
 <h1>Are you sure you want to buy the following toy?</h1>
 
 <div>
-    <p>@Model.Name</p>
+    <p>@Model.Name</p>5
 </div>
 <div>
     <p>@Model.Price</p>
 </div>
 
 <div>
-    <a href="/Order/Create/@Model.Id" class="btn btn-danger">Yes</a> &nbsp; <a href="/" class="btn btn-info">No</a>
+    <a href="/Order/CreateToyOrder/@Model.Id" class="btn btn-info">Yes</a> &nbsp; <a href="/" class="btn btn-danger">No</a>
 </div>
