@@ -12,5 +12,7 @@ namespace PetStore.Services
 
         IEnumerable<OrderListingServiceModel> All();
         void OrderToy(int toyId, string userId);
+
+        void OrderFood(int toyId, string userId);
     }
 }

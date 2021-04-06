@@ -62,5 +62,23 @@ namespace PetStore.Services.Implementations
 
             this.db.SaveChanges();
         }
+
+        public void OrderFood(int foodId, string userId)
+        {
+            var food = this.db.Food.FirstOrDefault(x => x.Id == foodId);
+
+            var order = new Order
+            {
+                PurchaseDate = DateTime.UtcNow,
+                Status = OrderStatus.Pending,
+                UserId = userId,
+            };
+            this.db.Orders.Add(order);
+            this.db.SaveChanges();
+
+            order.Food.Add(new FoodOrder() { Food = food });
+
+            this.db.SaveChanges();
+        }
     }
 }

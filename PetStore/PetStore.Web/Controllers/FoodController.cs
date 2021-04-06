@@ -65,5 +65,17 @@ namespace PetStore.Web.Controllers
 
             return RedirectToAction(nameof(All));
         }
+
+        public IActionResult Order(int id)
+        {
+            var foodDetails = this.foodService.Order(id);
+
+            if (foodDetails == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(foodDetails);
+        }
     }
 }

@@ -108,5 +108,17 @@ namespace PetStore.Services.Implementations
 
             return model;
         }
+
+        public FoodOrderListingServiceModel Order(int id)
+        {
+            var model = this.db.Food.Where(x => x.Id == id).Select(x => new FoodOrderListingServiceModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Price = x.Price,
+            }).FirstOrDefault();
+
+            return model;
+        }
     }
 }

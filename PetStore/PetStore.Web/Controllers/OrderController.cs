@@ -30,6 +30,13 @@ namespace PetStore.Web.Controllers
             return this.RedirectToAction(nameof(All));
         }
 
+        public IActionResult CreateFoodOrder(int Id)
+        {
+            var userId = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            this.orderService.OrderFood(Id, userId);
+            return this.RedirectToAction(nameof(All));
+        }
+
         public IActionResult All()
         {
             var allOrders = this.orderService.All();
@@ -39,6 +46,7 @@ namespace PetStore.Web.Controllers
 
         public IActionResult Complete(int id)
         {
+
             return this.View();
         }
     }

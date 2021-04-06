@@ -14,5 +14,8 @@ namespace PetStore.Services
         FoodDetailsServiceModel Details(int id);
 
         bool Delete(int id);
+
+
+        FoodOrderListingServiceModel Order(int id);
     }
 }
