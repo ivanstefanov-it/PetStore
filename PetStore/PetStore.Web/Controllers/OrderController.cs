@@ -46,7 +46,7 @@ namespace PetStore.Web.Controllers
 
         public IActionResult Complete(int id)
         {
-
+            this.orderService.Complete(id);
             return this.View();
         }
     }

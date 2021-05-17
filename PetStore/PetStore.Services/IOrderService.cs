@@ -14,5 +14,7 @@ namespace PetStore.Services
         void OrderToy(int toyId, string userId);
 
         void OrderFood(int toyId, string userId);
+
+        void Complete(int id);
     }
 }

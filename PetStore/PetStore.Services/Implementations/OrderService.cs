@@ -19,7 +19,7 @@ namespace PetStore.Services.Implementations
 
         public IEnumerable<OrderListingServiceModel> All()
         {
-            var allOrders = this.db.Orders.Select(x => new OrderListingServiceModel
+            var allOrders = this.db.Orders.Where(x => x.Status == OrderStatus.Pending).Select(x => new OrderListingServiceModel
             {
                 Id = x.Id,
                 PurchaseDate = x.PurchaseDate,
@@ -77,6 +77,14 @@ namespace PetStore.Services.Implementations
             this.db.SaveChanges();
 
             order.Food.Add(new FoodOrder() { Food = food });
+
+            this.db.SaveChanges();
+        }
+
+        public void Complete(int id)
+        {
+            var order = this.db.Orders.FirstOrDefault(x => x.Id == id);
+            order.Status = OrderStatus.Done;
 
             this.db.SaveChanges();
         }

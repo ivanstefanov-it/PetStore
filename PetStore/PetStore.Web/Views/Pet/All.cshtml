@@ -2,26 +2,41 @@
 
 <h3>List of all pets</h3>
 
+<div>
+    @if (!Model.PreviousDisabled)
+    {
+        <a href="/Pets/All?page=@Model.PreviousPage" class="float-left btn btn-info">Previos</a>
+    }
+
+    @if (!Model.NextDisabled)
+    {
+        <a href="/Pets/All?page=@Model.NextPage" class="float-right btn btn-info">Next</a>
+    }
+</div>
+
+<br />
+<br />
+
 <table class="table table-bordered table-striped">
 
     @foreach (var item in Model.Pets)
     {
-    <tr>
-        <td>
-            @item.Category
-        </td>
-        <td>
-            @item.Breed
-        </td>
-        <td>
-            @item.Price
-        </td>
-        <td class="text-center">
-            <a href="/Pet/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
-        </td>
-        <td class="text-center">
-            <a href="/Pet/Order/@item.Id" class="btn btn-info btn-sm">Order</a>
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @item.Category
+            </td>
+            <td>
+                @item.Breed
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td class="text-center">
+                <a href="/Pet/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+            <td class="text-center">
+                <a href="/Pet/Order/@item.Id" class="btn btn-info btn-sm">Order</a>
+            </td>
+        </tr>
     }
 </table>
