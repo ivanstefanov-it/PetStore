@@ -5,12 +5,12 @@
 <div>
     @if (!Model.PreviousDisabled)
     {
-        <a href="/Pets/All?page=@Model.PreviousPage" class="float-left btn btn-info">Previos</a>
+        <a href="/Pet/All?page=@Model.PreviousPage" class="float-left btn btn-info">Previos</a>
     }
 
     @if (!Model.NextDisabled)
     {
-        <a href="/Pets/All?page=@Model.NextPage" class="float-right btn btn-info">Next</a>
+        <a href="/Pet/All?page=@Model.NextPage" class="float-right btn btn-info">Next</a>
     }
 </div>
 

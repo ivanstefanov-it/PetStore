@@ -1,30 +1,44 @@
 ﻿@model PetStore.Web.ViewModels.Food.AllFoodsViewModel
 
 <h3>List of all foods</h3>
+<div>
+    @if (!Model.PreviousDisabled)
+    {
+        <a href="/Food/All?page=@Model.PreviousPage" class="float-left btn btn-info">Previos</a>
+    }
+
+    @if (!Model.NextDisabled)
+    {
+        <a href="/Food/All?page=@Model.NextPage" class="float-right btn btn-info">Next</a>
+    }
+</div>
+
+<br />
+<br />
 
 <table class="table table-bordered table-striped">
 
     @foreach (var item in Model.Foods)
     {
-    <tr>
-        <td>
-            @item.Name
-        </td>
-        <td>
-            @item.Weight
-        </td>
-        <td>
-            @item.ExpirationDate
-        </td>
-        <td>
-            @item.Price
-        </td>
-        <td class="text-center">
-            <a href="/Food/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
-        </td>
-        <td class="text-center">
-            <a href="/Food/Order/@item.Id" class="btn btn-info btn-sm">Order</a>
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Weight
+            </td>
+            <td>
+                @item.ExpirationDate
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td class="text-center">
+                <a href="/Food/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+            <td class="text-center">
+                <a href="/Food/Order/@item.Id" class="btn btn-info btn-sm">Order</a>
+            </td>
+        </tr>
     }
 </table>

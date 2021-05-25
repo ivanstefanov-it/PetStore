@@ -24,7 +24,7 @@ namespace PetStore.Web.ViewModels.Pet
         {
             get
             {
-                var maxPage = Math.Ceiling(((double)this.Total) / 25);
+                var maxPage = Math.Ceiling(((double)this.Total) / 9);
 
                 return maxPage == CurrentPage;
             }

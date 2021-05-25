@@ -35,10 +35,17 @@ namespace PetStore.Web.Controllers
             return RedirectToAction(nameof(All));
         }
 
-        public IActionResult All()
+        public IActionResult All(int page = 1)
         {
             var allFoods = this.foodService.All();
-            var model = new AllFoodsViewModel { Foods = allFoods };
+            var totalFood = this.foodService.Total();
+            
+            var model = new AllFoodsViewModel 
+            { 
+                Foods = allFoods,
+                Total = totalFood,
+                CurrentPage = page
+            };
             return this.View(model);
         }
 

@@ -10,7 +10,7 @@ namespace PetStore.Services.Implementations
 {
     public class PetService : IPetService
     {
-        private const int PetsPageSize = 25;
+        private const int PetsPageSize = 9;
         private readonly PetStoreDbContext db;
 
         public PetService(PetStoreDbContext db)

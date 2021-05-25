@@ -9,12 +9,13 @@ namespace PetStore.Services
     {
         int Create(string name, double weight, decimal distributorPrice, decimal price, DateTime expirationDate, int brand, int category);
 
-        IEnumerable<FoodListingServiceModel> All();
+        IEnumerable<FoodListingServiceModel> All(int page = 1);
 
         FoodDetailsServiceModel Details(int id);
 
         bool Delete(int id);
 
+        int Total();
 
         FoodOrderListingServiceModel Order(int id);
     }
