@@ -37,7 +37,7 @@ namespace PetStore.Web.Controllers
 
         public IActionResult All(int page = 1)
         {
-            var allFoods = this.foodService.All();
+            var allFoods = this.foodService.All(page);
             var totalFood = this.foodService.Total();
             
             var model = new AllFoodsViewModel 

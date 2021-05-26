@@ -10,6 +10,7 @@ namespace PetStore.Services.Implementations
 {
     public class ToyService : IToyService
     {
+        private const int PageSize = 9;
         private readonly PetStoreDbContext db;
 
         public ToyService(PetStoreDbContext db)
@@ -17,15 +18,20 @@ namespace PetStore.Services.Implementations
             this.db = db;
         }
 
-        public IEnumerable<ToyListingServiceModel> All()
+        public IEnumerable<ToyListingServiceModel> All(int page = 1)
         {
-            var allToys = this.db.Toys.Select(x => new ToyListingServiceModel
+            var allToys = this.db.
+                Toys
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)
+                .Select(x => new ToyListingServiceModel
             {
                 Id = x.Id,
                 Name = x.Name,
                 Description = x.Description,
                 Price = x.Price
-            }).ToList();
+            })
+                .ToList();
 
             return allToys;
         }
@@ -112,5 +118,7 @@ namespace PetStore.Services.Implementations
 
             return model;
         }
+
+        public int Total() => this.db.Toys.Count();
     }
 }
