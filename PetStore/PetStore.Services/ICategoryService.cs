@@ -9,9 +9,11 @@ namespace PetStore.Services
     {
         int Create(string name, string description);
 
-        IEnumerable<CategoryListingServiceModel> All();
+        IEnumerable<CategoryListingServiceModel> All(int page = 1);
 
         CategoryDetailsServiceModel Details(int id);
+
+        int Total();
 
         bool Delete(int id);
     }
