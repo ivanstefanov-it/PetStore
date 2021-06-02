@@ -11,6 +11,7 @@ namespace PetStore.Services.Implementations
 {
     public class BrandService : IBrandService
     {
+        private const int PageSize = 9;
         private readonly PetStoreDbContext db;
 
         public BrandService(PetStoreDbContext db)
@@ -43,13 +44,18 @@ namespace PetStore.Services.Implementations
             return brand.Id;
         }
 
-        public IEnumerable<BrandListingServiceModel> All()
+        public IEnumerable<BrandListingServiceModel> All(int page = 1)
         {
-            var allBrands = this.db.Brands.Select(x =>  new BrandListingServiceModel
-            { 
-                Id = x.Id,
-                Name = x.Name
-            }).ToList();
+            var allBrands = this.db
+                .Brands
+                .Skip((page - 1) *PageSize)
+                .Take(PageSize)
+                .Select(x =>  new BrandListingServiceModel
+                { 
+                    Id = x.Id,
+                    Name = x.Name
+                })
+                .ToList();
 
             return allBrands;
         }
@@ -82,5 +88,7 @@ namespace PetStore.Services.Implementations
 
             return brandDetails;
         }
+
+        public int Total() => this.db.Pets.Count();
     }
 }

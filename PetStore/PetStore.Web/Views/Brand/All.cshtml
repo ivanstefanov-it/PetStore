@@ -1,18 +1,34 @@
 ﻿@model PetStore.Web.ViewModels.Brand.AllBrandsViewModel
 
-    <h3>List of all brands</h3>
+<h3>List of all brands</h3>
+
+
+<div>
+    @if (!Model.PreviousDisabled)
+    {
+        <a href="/Brand/All?page=@Model.PreviousPage" class="float-left btn btn-info">Previos</a>
+    }
+
+    @if (!Model.NextDisabled)
+    {
+        <a href="/Brand/All?page=@Model.NextPage" class="float-right btn btn-info">Next</a>
+    }
+</div>
+
+<br />
+<br />
 
 <table class="table table-bordered table-striped">
 
     @foreach (var item in Model.Brands)
     {
-    <tr>
-        <td>
-            @item.Name
-        </td>
-        <td class="text-center">
-            <a href="/Brand/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td class="text-center">
+                <a href="/Brand/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
     }
 </table>

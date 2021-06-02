@@ -10,7 +10,7 @@ namespace PetStore.Services.Implementations
 {
     public class CategoryService : ICategoryService
     {
-        private const int PetsPageSize = 9;
+        private const int PageSize = 9;
         private readonly PetStoreDbContext db;
 
         public CategoryService(PetStoreDbContext db)
@@ -22,8 +22,8 @@ namespace PetStore.Services.Implementations
         {
             var allCategories = this.db
                 .Categories
-                .Skip((page - 1) * PetsPageSize)
-                .Take(PetsPageSize)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)
                 .Select(x => new CategoryListingServiceModel
             {
                 Id = x.Id,

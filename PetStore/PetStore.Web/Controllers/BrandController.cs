@@ -34,10 +34,16 @@ namespace PetStore.Web.Controllers
             return this.Redirect(nameof(All));
         }
 
-        public IActionResult All()
+        public IActionResult All(int page = 1)
         {
-            var allbrands = this.brandService.All();
-            var model = new AllBrandsViewModel { Brands = allbrands };
+            var allBrands = this.brandService.All(page);
+            var totalBrands = this.brandService.Total();
+            var model = new AllBrandsViewModel 
+            {
+                Brands = allBrands,
+                Total = totalBrands,
+                CurrentPage = page
+            };
             return this.View(model);
         }
 

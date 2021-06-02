@@ -10,7 +10,7 @@ namespace PetStore.Services.Implementations
 {
     public class FoodService : IFoodService
     {
-        private const int PetsPageSize = 9;
+        private const int PageSize = 9;
         private readonly PetStoreDbContext db;
 
         public FoodService(PetStoreDbContext db)
@@ -21,8 +21,8 @@ namespace PetStore.Services.Implementations
         public IEnumerable<FoodListingServiceModel> All(int page = 1)
         {
             var allFoods = this.db.Food
-                .Skip((page - 1) * PetsPageSize)
-                .Take(PetsPageSize).Select(x => new FoodListingServiceModel
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize).Select(x => new FoodListingServiceModel
             {
                 Id = x.Id,
                 Name = x.Name,
