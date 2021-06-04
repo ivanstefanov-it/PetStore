@@ -9,10 +9,11 @@ namespace PetStore.Services
     {
         int Create(string name);
 
-        IEnumerable<BreedListingServiceModel> All();
+        IEnumerable<BreedListingServiceModel> All(int page = 1);
 
         bool Delete(int id);
 
+        int Total();
         BreedDetailsListingModel Details(int id);
     }
 }

@@ -1,6 +1,22 @@
 ﻿@model PetStore.Web.ViewModels.Breed.AllBreedViewModel
 
-    <h3>List of all breeds</h3>
+<h3>List of all breeds</h3>
+
+
+<div>
+    @if (!Model.PreviousDisabled)
+    {
+        <a href="/Breed/All?page=@Model.PreviousPage" class="float-left btn btn-info">Previos</a>
+    }
+
+    @if (!Model.NextDisabled)
+    {
+        <a href="/Breed/All?page=@Model.NextPage" class="float-right btn btn-info">Next</a>
+    }
+</div>
+
+<br />
+<br />
 
 <table class="table table-bordered table-striped">
 

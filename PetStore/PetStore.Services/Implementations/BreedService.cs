@@ -10,6 +10,7 @@ namespace PetStore.Services.Implementations
 {
     public class BreedService : IBreedService
     {
+        private const int PageSize = 9;
         private readonly PetStoreDbContext db;
 
         public BreedService(PetStoreDbContext db)
@@ -17,9 +18,13 @@ namespace PetStore.Services.Implementations
             this.db = db;
         }
 
-        public IEnumerable<BreedListingServiceModel> All()
+        public IEnumerable<BreedListingServiceModel> All(int page = 1)
         {
-            var allBreeds = this.db.Breeds.Select(x => new BreedListingServiceModel
+            var allBreeds = this.db
+                .Breeds
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)
+                .Select(x => new BreedListingServiceModel
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -80,5 +85,7 @@ namespace PetStore.Services.Implementations
 
             return breedDetails;
         }
+
+        public int Total() => this.db.Breeds.Count();
     }
 }
