@@ -39,7 +39,7 @@ namespace PetStore.Services.Implementations
             };
 
             var user = this.db.Users.FirstOrDefault(x => x.Id == userId);
-                
+
             this.db.Orders.Add(order);
             this.db.SaveChanges();
             return order.Id;
@@ -58,7 +58,7 @@ namespace PetStore.Services.Implementations
             this.db.Orders.Add(order);
             this.db.SaveChanges();
 
-            order.Toys.Add(new ToyOrder() { Toy = toy});
+            order.Toys.Add(new ToyOrder() { Toy = toy });
 
             this.db.SaveChanges();
         }
@@ -87,6 +87,18 @@ namespace PetStore.Services.Implementations
             order.Status = OrderStatus.Done;
 
             this.db.SaveChanges();
+        }
+
+        public OrderListingServiceModel GetOrder(int id)
+        {
+            var order = this.db.Orders.Where(x => x.Id == id).Select(x => new OrderListingServiceModel
+            {
+                Id = x.Id,
+                PurchaseDate = x.PurchaseDate,
+                Status = x.Status
+            }).FirstOrDefault();
+
+            return order;
         }
     }
 }

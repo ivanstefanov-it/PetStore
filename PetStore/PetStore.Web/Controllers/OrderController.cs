@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PetStore.Data.Models;
 using PetStore.Services;
+using PetStore.Services.Models.Order;
 using PetStore.Web.ViewModels.Order;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,9 @@ namespace PetStore.Web.Controllers
         public IActionResult Complete(int id)
         {
             this.orderService.Complete(id);
-            return this.View();
+            var order = this.orderService.GetOrder(id);
+            var model = new GetOrderViewModel { Order = order };
+            return this.View(model);
         }
     }
 }
