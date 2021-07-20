@@ -18,6 +18,8 @@
         [MaxLength(DescriptionMaxLength)]
         public string Description { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public int BreedId { get; set; }
 
         public Breed Breed { get; set; }
