@@ -42,3 +42,18 @@
         </tr>
     }
 </table>
+
+<div class="row">
+    @foreach (var item in Model.Foods)
+    {
+        <div class="col-md-4 card" style="width: 18rem;">
+            <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Weight kg.</p>
+                <p class="card-text">$ @item.Price</p>
+                <a href="/Food/Order/@item.Id" class="btn btn-primary">Order</a>
+            </div>
+        </div>
+    }
+</div>

@@ -31,7 +31,7 @@ namespace PetStore.Web.Controllers
                 return this.View(inputModel);
             }
             
-            this.foodService.Create(inputModel.Name, inputModel.Weight, inputModel.DistributorPrice, inputModel.Price, inputModel.ExpirationDate, inputModel.BrandId, inputModel.CategoryId);
+            this.foodService.Create(inputModel.Name, inputModel.Weight, inputModel.DistributorPrice, inputModel.Price, inputModel.ExpirationDate, inputModel.BrandId, inputModel.CategoryId, inputModel.ImageUrl);
             return RedirectToAction(nameof(All));
         }
 

@@ -24,6 +24,11 @@
         </div>
         <br />
         <div>
+            <input asp-for="ImageUrl" type="text" class="form-control" placeholder="ImageUrl..." name="ImageUrl">
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+        <br />
+        <div>
             <input asp-for="ExpirationDate" type="date" class="form-control" placeholder="Expiration date..." name="ExpirationDate">
             <span asp-validation-for="ExpirationDate" class="text-danger"></span>
         </div>

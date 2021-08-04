@@ -28,13 +28,14 @@ namespace PetStore.Services.Implementations
                 Name = x.Name,
                 Price = x.Price,
                 Weight = x.Weight,
+                ImageUrl = x.ImageUrl,
                 ExpirationDate = x.ExpirationDate,
             }).ToList();
 
             return allFoods;
         }
 
-        public int Create(string name, double weight, decimal distributorPrice, decimal price, DateTime expirationDate, int brand, int category)
+        public int Create(string name, double weight, decimal distributorPrice, decimal price, DateTime expirationDate, int brand, int category, string imageUrl)
         {
             if (name == null)
             {
@@ -73,7 +74,8 @@ namespace PetStore.Services.Implementations
                 Name = name,
                 Weight = weight,
                 DistributorPrice = distributorPrice,
-                Price = price, 
+                Price = price,
+                ImageUrl = imageUrl,
                 ExpirationDate = expirationDate,
                 BrandId = brandId,
                 CategoryId = categoryId,

@@ -7,7 +7,7 @@ namespace PetStore.Services
 {
     public interface IFoodService
     {
-        int Create(string name, double weight, decimal distributorPrice, decimal price, DateTime expirationDate, int brand, int category);
+        int Create(string name, double weight, decimal distributorPrice, decimal price, DateTime expirationDate, int brand, int category, string imageUrl);
 
         IEnumerable<FoodListingServiceModel> All(int page = 1);
 

@@ -22,6 +22,7 @@ namespace PetStore.Web.ViewModels.Food
         [Range(0, 10000)]
         public decimal Price { get; set; }
 
+        public string ImageUrl { get; set; }
         public DateTime ExpirationDate { get; set; }
 
         public int BrandId { get; set; }
