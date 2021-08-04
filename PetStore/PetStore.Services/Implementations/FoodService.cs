@@ -120,6 +120,7 @@ namespace PetStore.Services.Implementations
             {
                 Id = x.Id,
                 Name = x.Name,
+                ImageUrl = x.ImageUrl,
                 Price = x.Price,
             }).FirstOrDefault();
 

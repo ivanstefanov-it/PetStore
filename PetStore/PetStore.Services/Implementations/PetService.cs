@@ -29,6 +29,8 @@ namespace PetStore.Services.Implementations
                     Id = p.Id,
                     Breed = p.Breed.Name,
                     Price = p.Price,
+                    Gender = p.Gender.ToString(),
+                    ImageUrl = p.ImageUrl,
                     Category = p.Category.Name,
                 })
                 .ToList();
@@ -110,6 +112,7 @@ namespace PetStore.Services.Implementations
                 Id = x.Id,
                 Gender = x.Gender,
                 Price = x.Price,
+                ImageUrl = x.ImageUrl,
                 Description = x.Description,
             }).FirstOrDefault();
 

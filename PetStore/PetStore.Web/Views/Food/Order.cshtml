@@ -2,13 +2,15 @@
 
 <h1>Are you sure you want to buy the following food?</h1>
 
-<div>
-    <p>@Model.Name</p>5
+<div class="col-md-4 card" style="width: 18rem;">
+    <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Name">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">$ @Model.Price</p>
+        <a href="/Food/Order/@Model.Id" class="btn btn-primary">Order</a>
+    </div>
 </div>
+<br />
 <div>
-    <p>@Model.Price</p>
-</div>
-
-<div>
-    <a href="/Order/CreateFoodOrder/@Model.Id" class="btn btn-info">Yes</a> &nbsp; <a href="/" class="btn btn-danger">No</a>
+    <a href="/Order/CreateFoodOrder/@Model.Id" class="btn btn-info">Yes</a> &nbsp; <a href="/Food/All" class="btn btn-danger">No</a>
 </div>
