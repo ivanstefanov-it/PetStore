@@ -24,6 +24,11 @@
         </div>
         <br />
         <div>
+            <input asp-for="ImageUrl" type="text" class="form-control" placeholder="ImageUrl..." name="ImageUrl">
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+        <br />
+        <div>
             <input asp-for="BrandId" type="text" class="form-control" placeholder="Brand..." name="BrandId">
             <span asp-validation-for="BrandId" class="text-danger"></span>
         </div>

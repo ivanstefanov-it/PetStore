@@ -8,7 +8,7 @@ namespace PetStore.Services
 {
     public interface IPetService
     {
-        int Create(Gender gender, DateTime dateOfBirth, decimal price, string description, int breedId, int categoryId);
+        int Create(Gender gender, DateTime dateOfBirth, decimal price, string description, int breedId, int categoryId, string imageUrl);
 
         IEnumerable<PetListingServiceModel> All(int page = 1);
 

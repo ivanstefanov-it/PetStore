@@ -23,6 +23,8 @@ namespace PetStore.Web.ViewModels.Toy
         [Range(0, 10000)]
         public decimal Price { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public int BrandId { get; set; }
 
         public int CategoryId { get; set; }

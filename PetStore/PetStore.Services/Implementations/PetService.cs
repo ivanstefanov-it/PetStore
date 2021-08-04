@@ -36,7 +36,7 @@ namespace PetStore.Services.Implementations
             return allPets;
         }
 
-        public int Create(Gender gender, DateTime dateOfBirth, decimal price, string description, int breed, int category)
+        public int Create(Gender gender, DateTime dateOfBirth, decimal price, string description, int breed, int category, string imageUrl)
         {
             
             if (description.Length < 10)
@@ -60,6 +60,7 @@ namespace PetStore.Services.Implementations
                 Description = description,
                 BreedId = breedId,
                 CategoryId = categoryId,
+                ImageUrl = imageUrl
             };
             this.db.Pets.Add(pet);
             this.db.SaveChanges();

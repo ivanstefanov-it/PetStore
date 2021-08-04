@@ -27,6 +27,7 @@ namespace PetStore.Services.Implementations
                 .Select(x => new ToyListingServiceModel
             {
                 Id = x.Id,
+                ImageUrl = x.ImageUrl,
                 Name = x.Name,
                 Description = x.Description,
                 Price = x.Price
@@ -36,7 +37,7 @@ namespace PetStore.Services.Implementations
             return allToys;
         }
 
-        public int Create(string name, string decsription, decimal distributorPrice, decimal price, int brand, int category)
+        public int Create(string name, string decsription, decimal distributorPrice, decimal price, int brand, int category, string imageUrl)
         {
             if (name == null)
             {
@@ -72,6 +73,7 @@ namespace PetStore.Services.Implementations
                 Price = price,
                 DistributorPrice = distributorPrice,
                 Description = decsription,
+                ImageUrl = imageUrl,
                 BrandId = brandId,
                 CategoryId = categoryId
             };
@@ -114,6 +116,7 @@ namespace PetStore.Services.Implementations
                 Id = x.Id,
                 Name = x.Name,
                 Price = x.Price,
+                ImageUrl = x.ImageUrl
             }).FirstOrDefault();
 
             return model;

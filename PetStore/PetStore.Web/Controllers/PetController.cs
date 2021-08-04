@@ -30,7 +30,7 @@ namespace PetStore.Web.Controllers
                 return this.View(inputModel);
             }
 
-            this.petService.Create(inputModel.Gender, inputModel.DateOfBirth,  inputModel.Price, inputModel.Description, inputModel.BreedId, inputModel.CategoryId);
+            this.petService.Create(inputModel.Gender, inputModel.DateOfBirth,  inputModel.Price, inputModel.Description, inputModel.BreedId, inputModel.CategoryId, inputModel.ImageUrl);
             return RedirectToAction(nameof(All));
         }
 

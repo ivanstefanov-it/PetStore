@@ -2,13 +2,14 @@
 
 <h1>Are you sure you want to buy the following toy?</h1>
 
-<div>
-    <p>@Model.Name</p>5
+<div class="col-md-4 card" style="width: 18rem;">
+    <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Name">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">$ @Model.Price</p>
+    </div>
 </div>
+<br />
 <div>
-    <p>@Model.Price</p>
-</div>
-
-<div>
-    <a href="/Order/CreateToyOrder/@Model.Id" class="btn btn-info">Yes</a> &nbsp; <a href="/" class="btn btn-danger">No</a>
+    <a href="/Order/CreateToyOrder/@Model.Id" class="btn btn-info">Yes</a> &nbsp; <a href="/Toy/All" class="btn btn-danger">No</a>
 </div>

@@ -24,5 +24,7 @@ namespace PetStore.Web.ViewModels.Pet
         public int BreedId { get; set; }
 
         public int CategoryId { get; set; }
+
+        public string ImageUrl { get; set; }
     }
 }
