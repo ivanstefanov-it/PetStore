@@ -33,7 +33,7 @@ Microsoft SQL Server along with Entity Framework Core were used to create and st
 **Future work**
 
 * *Add admin role*
-* *Order layout*
+* *Better site layout*
 * *Add unit tests*
 
 
