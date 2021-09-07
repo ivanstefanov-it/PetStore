@@ -8,8 +8,8 @@
 
 **Build with**:
 
-*ASP.NET Core 3.1*
-*EF Core*
+* *ASP.NET Core 3.1*
+* *EF Core*
 
 
 ---
@@ -32,9 +32,9 @@ Microsoft SQL Server along with Entity Framework Core were used to create and st
 
 **Future work**
 
-*Add admin role*
-*Order layout*
-*Add unit tests*
+* *Add admin role*
+* *Order layout*
+* *Add unit tests*
 
 
 This website has been created solely for educational purposes.
