@@ -44,6 +44,7 @@ namespace PetStore.Web
                 options.Password.RequireUppercase = false;
                 options.SignIn.RequireConfirmedEmail = false;
             })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<PetStoreDbContext>();
             services.AddControllersWithViews();
             services.AddTransient<IBrandService, BrandService>();

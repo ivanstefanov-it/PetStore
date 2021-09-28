@@ -84,5 +84,10 @@ namespace PetStore.Web.Controllers
 
             return this.View(petDetails);
         }
+
+        public IActionResult Test()
+        {
+            return this.Json("test");
+        }
     }
 }
