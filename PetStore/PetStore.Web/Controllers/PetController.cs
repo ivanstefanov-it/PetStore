@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PetStore.Services;
 using PetStore.Web.ViewModels.Pet;
 using System;
@@ -17,6 +18,7 @@ namespace PetStore.Web.Controllers
             this.petService = petService;
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return this.View();
@@ -49,6 +51,7 @@ namespace PetStore.Web.Controllers
             return this.View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             var pet = this.petService.Details(id);
@@ -83,11 +86,6 @@ namespace PetStore.Web.Controllers
             }
 
             return this.View(petDetails);
-        }
-
-        public IActionResult Test()
-        {
-            return this.Json("test");
         }
     }
 }

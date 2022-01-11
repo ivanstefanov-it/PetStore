@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PetStore.Data.Models;
@@ -45,6 +46,7 @@ namespace PetStore.Web.Controllers
             return this.View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Complete(int id)
         {
             this.orderService.Complete(id);
