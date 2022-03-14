@@ -18,22 +18,26 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
-                    <select onChange="window.location.href=this.value">
-                        <option value="">Admin panel</option>
-                        <option value="/Brand/Create">Add new brand</option>
-                        <option value="/Brand/All">See all brands</option>
-                        <option value="/Breed/Create">Add new breed</option>
-                        <option value="/Breed/All">See all breeds</option>
-                        <option value="/Category/Create">Add new category</option>
-                        <option value="/Category/All">See all categories</option>
-                        <option value="/Food/Create">Add new food</option>
-                        <option value="/Food/All">See all foods</option>
-                        <option value="/Pet/Create">Add new pet</option>
-                        <option value="/Pet/All">See all pets</option>
-                        <option value="/Toy/Create">Add new toy</option>
-                        <option value="/Toy/All">See all toys</option>
-                        <option value="/Order/All">See your orders</option>
-                    </select>
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <select onChange="window.location.href=this.value">
+                            <option value="">Admin panel</option>
+                            <option value="/Brand/Create">Add new brand</option>
+                            <option value="/Brand/All">See all brands</option>
+                            <option value="/Breed/Create">Add new breed</option>
+                            <option value="/Breed/All">See all breeds</option>
+                            <option value="/Category/Create">Add new category</option>
+                            <option value="/Category/All">See all categories</option>
+                            <option value="/Food/Create">Add new food</option>
+                            <option value="/Food/All">See all foods</option>
+                            <option value="/Pet/Create">Add new pet</option>
+                            <option value="/Pet/All">See all pets</option>
+                            <option value="/Toy/Create">Add new toy</option>
+                            <option value="/Toy/All">See all toys</option>
+                            <option value="/Order/All">See your orders</option>
+                        </select>
+                    }
+
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
