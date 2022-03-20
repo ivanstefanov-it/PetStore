@@ -18,30 +18,6 @@
 <br />
 
 
-<table class="table table-bordered table-striped">
-
-    @foreach (var item in Model.Toys)
-    {
-        <tr>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.Description
-            </td>
-            <td>
-                @item.Price
-            </td>
-            <td class="text-center">
-                <a href="/Toy/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
-            </td>
-            <td class="text-center">
-                <a href="/Toy/Order/@item.Id" class="btn btn-info btn-sm">Order</a>
-            </td>
-        </tr>
-    }
-</table>
-
 <div class="row">
     @foreach (var item in Model.Toys)
     {
@@ -51,7 +27,11 @@
                 <h5 class="card-title">@item.Name</h5>
                 <p class="card-text">@item.Description</p>
                 <p class="card-text">$ @item.Price</p>
-                <a href="/Toy/Order/@item.Id" class="btn btn-primary">Order</a>
+                <a href="/Toy/Order/@item.Id" class="btn btn-primary mr-3">Order</a>
+                @if (this.User.IsInRole("Admin"))
+                {
+                    <a href="/Toy/Delete/@item.Id" class="btn btn-danger">Delete</a>
+                }
             </div>
         </div>
     }

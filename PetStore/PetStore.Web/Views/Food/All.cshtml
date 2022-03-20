@@ -16,33 +16,6 @@
 <br />
 <br />
 
-<table class="table table-bordered table-striped">
-
-    @foreach (var item in Model.Foods)
-    {
-        <tr>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.Weight
-            </td>
-            <td>
-                @item.ExpirationDate
-            </td>
-            <td>
-                @item.Price
-            </td>
-            <td class="text-center">
-                <a href="/Food/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
-            </td>
-            <td class="text-center">
-                <a href="/Food/Order/@item.Id" class="btn btn-info btn-sm">Order</a>
-            </td>
-        </tr>
-    }
-</table>
-
 <div class="row">
     @foreach (var item in Model.Foods)
     {
@@ -52,7 +25,11 @@
                 <h5 class="card-title">@item.Name</h5>
                 <p class="card-text">@item.Weight kg.</p>
                 <p class="card-text">$ @item.Price</p>
-                <a href="/Food/Order/@item.Id" class="btn btn-primary">Order</a>
+                <a href="/Food/Order/@item.Id" class="btn btn-primary mr-3">Order</a>
+                @if (this.User.IsInRole("Admin"))
+                {
+                    <a href="/Food/Delete/@item.Id" class="btn btn-danger">Delete</a>
+                }
             </div>
         </div>
     }
