@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PetStore.Services
 {
     public interface IToyService
     {
-        int Create(string name, string decsription, decimal distributorPrice, decimal price, int brand, int category, string imageUrl);
+        Task<int> Create(string name, string decsription, decimal distributorPrice, decimal price, int brand, int category, string imageUrl);
 
         IEnumerable<ToyListingServiceModel> All(int page = 1);
 

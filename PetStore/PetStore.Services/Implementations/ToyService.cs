@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PetStore.Services.Implementations
 {
@@ -37,7 +38,7 @@ namespace PetStore.Services.Implementations
             return allToys;
         }
 
-        public int Create(string name, string decsription, decimal distributorPrice, decimal price, int brand, int category, string imageUrl)
+        public async Task<int> Create(string name, string decsription, decimal distributorPrice, decimal price, int brand, int category, string imageUrl)
         {
             if (name == null)
             {
@@ -77,8 +78,9 @@ namespace PetStore.Services.Implementations
                 BrandId = brandId,
                 CategoryId = categoryId
             };
-            this.db.Toys.Add(toy);
-            this.db.SaveChanges();
+
+            await this.db.Toys.AddAsync(toy);
+            await this.db.SaveChangesAsync();
             return toy.Id;
         }
 

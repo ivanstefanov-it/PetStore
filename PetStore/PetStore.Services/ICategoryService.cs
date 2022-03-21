@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PetStore.Services
 {
     public interface ICategoryService
     {
-        int Create(string name, string description);
+        Task<int> Create(string name, string description);
 
         IEnumerable<CategoryListingServiceModel> All(int page = 1);
 

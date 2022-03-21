@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PetStore.Services.Implementations
 {
@@ -29,7 +30,7 @@ namespace PetStore.Services.Implementations
             return allOrders;
         }
 
-        public int Create(string userId)
+        public async Task<int> Create(string userId)
         {
             var order = new Order
             {
@@ -40,8 +41,8 @@ namespace PetStore.Services.Implementations
 
             var user = this.db.Users.FirstOrDefault(x => x.Id == userId);
 
-            this.db.Orders.Add(order);
-            this.db.SaveChanges();
+            await this.db.Orders.AddAsync(order);
+            await this.db.SaveChangesAsync();
             return order.Id;
         }
 

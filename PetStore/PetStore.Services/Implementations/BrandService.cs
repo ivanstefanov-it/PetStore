@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PetStore.Services.Implementations
 {
@@ -19,7 +20,7 @@ namespace PetStore.Services.Implementations
             this.db = db;
         }
 
-        public int Create(string name)
+        public async Task<int> Create(string name)
         {
             if (name == null)
             {
@@ -38,8 +39,8 @@ namespace PetStore.Services.Implementations
 
             var brand = new Brand { Name = name };
 
-            this.db.Brands.Add(brand);
-            this.db.SaveChanges();
+            await this.db.Brands.AddAsync(brand);
+            await this.db.SaveChangesAsync();
 
             return brand.Id;
         }

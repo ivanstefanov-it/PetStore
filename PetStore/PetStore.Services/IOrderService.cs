@@ -3,12 +3,13 @@ using PetStore.Services.Models.Order;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PetStore.Services
 {
     public interface IOrderService
     {
-        int Create(string userId);
+        Task<int> Create(string userId);
 
         IEnumerable<OrderListingServiceModel> All();
 

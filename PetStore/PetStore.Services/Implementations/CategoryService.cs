@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PetStore.Services.Implementations
 {
@@ -34,7 +35,7 @@ namespace PetStore.Services.Implementations
             return allCategories;
         }
 
-        public int Create(string name, string description)
+        public async Task<int> Create(string name, string description)
         {
             if (name == null)
             {
@@ -57,8 +58,8 @@ namespace PetStore.Services.Implementations
                 Description = description,
             };
 
-            this.db.Categories.Add(category);
-            this.db.SaveChanges();
+            await this.db.Categories.AddAsync(category);
+            await this.db.SaveChangesAsync();
             return category.Id;
         }
 

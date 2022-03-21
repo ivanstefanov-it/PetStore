@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PetStore.Services.Implementations
 {
@@ -38,7 +39,7 @@ namespace PetStore.Services.Implementations
             return allPets;
         }
 
-        public int Create(Gender gender, DateTime dateOfBirth, decimal price, string description, int breed, int category, string imageUrl)
+        public async Task<int> Create(Gender gender, DateTime dateOfBirth, decimal price, string description, int breed, int category, string imageUrl)
         {
             
             if (description.Length < 10)
@@ -64,8 +65,9 @@ namespace PetStore.Services.Implementations
                 CategoryId = categoryId,
                 ImageUrl = imageUrl
             };
-            this.db.Pets.Add(pet);
-            this.db.SaveChanges();
+
+            await this.db.Pets.AddAsync(pet);
+            await this.db.SaveChangesAsync();
             return pet.Id;
         }
 

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PetStore.Services.Implementations
 {
@@ -33,7 +34,7 @@ namespace PetStore.Services.Implementations
             return allBreeds;
         }
 
-        public int Create(string name)
+        public async Task<int> Create(string name)
         {
             if (name == null)
             {
@@ -51,8 +52,8 @@ namespace PetStore.Services.Implementations
             }
 
             var breed = new Breed { Name = name };
-            this.db.Breeds.Add(breed);
-            this.db.SaveChanges();
+            await this.db.Breeds.AddAsync(breed);
+            await this.db.SaveChangesAsync();
 
             return breed.Id;
         }
