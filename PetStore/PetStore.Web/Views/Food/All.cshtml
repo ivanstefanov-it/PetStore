@@ -22,9 +22,11 @@
         <div class="col-md-4 card" style="width: 18rem;">
             <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name">
             <div class="card-body">
-                <h5 class="card-title">@item.Name</h5>
+                <i class="fa-solid fa-hand-back-point-right"></i>
+                <h5 class="card-title">@item.Name <i class="fa-solid fa-hand-back-point-right"></i></h5>
                 <p class="card-text">@item.Weight kg.</p>
-                <p class="card-text">$ @item.Price</p>
+                <i class="fa-solid fa-dollar-sign">@item.Price</i>
+                <hr />
                 <a href="/Food/Order/@item.Id" class="btn btn-primary mr-3">Order</a>
                 @if (this.User.IsInRole("Admin"))
                 {

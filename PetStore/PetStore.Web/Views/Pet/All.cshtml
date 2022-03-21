@@ -25,7 +25,8 @@
             <div class="card-body">
                 <h5 class="card-title">@item.Category</h5>
                 <p class="card-text">@item.Gender.ToString()</p>
-                <p class="card-text">$ @item.Price</p>
+                <i class="fa-solid fa-dollar-sign">@item.Price</i>
+                <hr />
                 <a href="/Pet/Order/@item.Id" class="btn btn-primary mr-3">Order</a>
                 @if (this.User.IsInRole("Admin"))
                 {
