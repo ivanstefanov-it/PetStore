@@ -28,12 +28,11 @@ Microsoft SQL Server along with Entity Framework Core were used to create and st
 
 
 ---
+![Alt text](C:\Users\Ivan Stefanov\Desktop\pics\homePage.png?raw=true "Home Page")
 
 
 **Future work**
 
-* *Add admin role*
-* *Better site layout*
 * *Add unit tests*
 
 
