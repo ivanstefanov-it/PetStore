@@ -28,7 +28,7 @@ Microsoft SQL Server along with Entity Framework Core were used to create and st
 
 
 ---
-![Alt text](C:\Users\Ivan%20Stefanov\Desktop\pics\homePage.png?raw=true "Home Page")
+![](C:\Users\Ivan%20Stefanov\Desktop\pics\homePage.png?raw=true "Home Page")
 
 
 **Future work**
