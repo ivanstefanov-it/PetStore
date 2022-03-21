@@ -5,23 +5,23 @@
  Pet store is a simple web shop where you can buy food, toys or even a pet. The admin can delete food, toys and pets, and can confirm orders.
 
 ---
-View of Home Page
+**View of Home Page**
 
 ![](Images/homePage.jpg)
 
-View of Pets Page
+**View of Pets Page**
 
 ![](Images/petsPage.jpg)
 
-View of Toys Page
+**View of Toys Page**
 
 ![](Images/toysPage.jpg)
 
-You can order a product
+**You can order a product**
 
 ![](Images/orderPage.jpg)
 
-View of admin menu
+**View of admin menu**
 
 ![](Images/admin.jpg)
 ![](Images/adminBar.jpg)
@@ -29,7 +29,7 @@ View of admin menu
 ---
 **Build with**:
 
-* *ASP.NET Core 3.1*
+* *ASP.NET Core*
 * *EF Core*
 
 
