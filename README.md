@@ -9,17 +9,25 @@
 
 ![](Images/homePage.jpg)
 
+---
+
 **View of Pets Page**
 
 ![](Images/petsPage.jpg)
+
+---
 
 **View of Toys Page**
 
 ![](Images/toysPage.jpg)
 
+---
+
 **You can order a product**
 
 ![](Images/orderPage.jpg)
+
+---
 
 **View of admin menu**
 
