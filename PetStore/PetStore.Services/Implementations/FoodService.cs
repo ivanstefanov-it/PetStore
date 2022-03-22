@@ -21,6 +21,7 @@ namespace PetStore.Services.Implementations
 
         public IEnumerable<FoodListingServiceModel> All(int page = 1)
         {
+
             var allFoods = this.db.Food
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize).Select(x => new FoodListingServiceModel
