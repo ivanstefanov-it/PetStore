@@ -37,6 +37,11 @@ namespace PetStore.Services.Implementations
                 throw new InvalidOperationException($"Brand name cannot be more than {DataValidation.NameMaxLength} symbols!");
             }
 
+            if (name.Length < 2)
+            {
+                throw new InvalidOperationException($"Brand name cannot be less than {DataValidation.NameMinLength} symbols!");
+            }
+
             var brand = new Brand { Name = name };
 
             await this.db.Brands.AddAsync(brand);
@@ -90,6 +95,6 @@ namespace PetStore.Services.Implementations
             return brandDetails;
         }
 
-        public int Total() => this.db.Pets.Count();
+        public int Total() => this.db.Brands.Count();
     }
 }

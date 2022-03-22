@@ -42,6 +42,11 @@ namespace PetStore.Services.Implementations
                 throw new InvalidOperationException("Category name cannot be empty!");
             }
 
+            if (description == null)
+            {
+                throw new InvalidOperationException("Description cannot be empty!");
+            }
+
             if (this.db.Categories.Any(x => x.Name == name))
             {
                 throw new InvalidOperationException($"Category name {name} already exists!");
@@ -50,6 +55,21 @@ namespace PetStore.Services.Implementations
             if (name.Length > DataValidation.NameMaxLength)
             {
                 throw new InvalidOperationException($"Category name cannot be more than {DataValidation.NameMaxLength} symbols!");
+            }
+
+            if (name.Length > DataValidation.NameMinLength)
+            {
+                throw new InvalidOperationException($"Category name cannot be less than {DataValidation.NameMinLength} symbols!");
+            }
+
+            if (description.Length > DataValidation.DescriptionMaxLength)
+            {
+                throw new InvalidOperationException($"Description cannot be more than {DataValidation.DescriptionMaxLength} symbols!");
+            }
+
+            if (description.Length > DataValidation.NameMinLength)
+            {
+                throw new InvalidOperationException($"Description cannot be less than {DataValidation.NameMinLength} symbols!");
             }
 
             var category = new Category

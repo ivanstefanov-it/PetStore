@@ -51,6 +51,11 @@ namespace PetStore.Services.Implementations
                 throw new InvalidOperationException($"Breed name cannot be more than {DataValidation.NameMaxLength} symbols!");
             }
 
+            if (name.Length > DataValidation.NameMinLength)
+            {
+                throw new InvalidOperationException($"Breed name cannot be less than {DataValidation.NameMinLength} symbols!");
+            }
+
             var breed = new Breed { Name = name };
             await this.db.Breeds.AddAsync(breed);
             await this.db.SaveChangesAsync();

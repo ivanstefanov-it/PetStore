@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore.Data", "PetStore.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore.Services", "PetStore.Services\PetStore.Services.csproj", "{F834899A-E124-4D47-B963-EC615C362BE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "SandBox\SandBox.csproj", "{71F6C6A0-59D3-4284-BB89-BC4193E5301E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandBox", "SandBox\SandBox.csproj", "{71F6C6A0-59D3-4284-BB89-BC4193E5301E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.Tests", "PetStore.Tests\PetStore.Tests.csproj", "{2343B1E0-B1BC-46C4-A2B6-DDB3C06EE897}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{71F6C6A0-59D3-4284-BB89-BC4193E5301E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71F6C6A0-59D3-4284-BB89-BC4193E5301E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71F6C6A0-59D3-4284-BB89-BC4193E5301E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2343B1E0-B1BC-46C4-A2B6-DDB3C06EE897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2343B1E0-B1BC-46C4-A2B6-DDB3C06EE897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2343B1E0-B1BC-46C4-A2B6-DDB3C06EE897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2343B1E0-B1BC-46C4-A2B6-DDB3C06EE897}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
